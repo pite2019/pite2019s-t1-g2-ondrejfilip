@@ -21,25 +21,37 @@
 #Your program must be runnable with command "python task.py".
 #Show some usecases of your library in the code (print some things)
 #
-#When you are done upload this code to github repository. 
+#When you are done upload this code to github repository.
 #
 #Delete these comments before commit!
 #Good luck.
-    
+
 class Car:
-  
-  def __init__(self, wheel_angle, speed)
-  self.wheel_angle = wheel_angle 
-  self.speed = speed
 
-  def act(self, event)
-  event = 
+  def __init__(self, wheel_angle = 0, speed = 0):
+      self.wheel_angle = wheel_angle
+      self.speed = speed
 
-  def breaks(self, speed, limit)
-  if speed == 80:
-    speed == 
+  def act(self, event):
+      if event == 'turn_right':
+         self.wheel_angle = 135
 
-  car1 = Car(30, 90)
-  car1.act(breaks)
-  print(car1.wheel_angle, car1.speed)
-  
+      if event == 'turn_left':
+         self.wheel_angle = 45
+
+      if event == 'accelerate':
+         accelerated_speed = 90
+         self.speed =+ accelerated_speed
+
+      if event == 'stop':
+         slowed_speed = 0
+         self.speed =- slowed_speed
+
+car1 = Car()
+print(car1.wheel_angle, car1.speed)
+
+car1.act('accelerate')
+print(car1.wheel_angle, car1.speed)
+
+car1.act('turn_right')
+print(car1.wheel_angle, car1.speed)
