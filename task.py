@@ -26,3 +26,20 @@
 #Delete these comments before commit!
 #Good luck.
     
+class Car:
+  
+  def __init__(self, wheel_angle, speed)
+  self.wheel_angle = wheel_angle 
+  self.speed = speed
+
+  def act(self, event)
+  event = 
+
+  def breaks(self, speed, limit)
+  if speed == 80:
+    speed == 
+
+  car1 = Car(30, 90)
+  car1.act(breaks)
+  print(car1.wheel_angle, car1.speed)
+  
