@@ -16,10 +16,15 @@ class Car:
       #else:print("Engine needs to be running. ")
 
   def slowdown(self):
-      pass
+      if self.engineisrunning is True and self.speed > 50:
+          slowed_speed = 50
+          self.speed =- slowed_speed
+      #else:print("Engine needs to be running. ")
 
   def turn(self):
-      self.wheel_angle = 135
+      angle = 100
+      self.wheel_angle =+ angle
+
 
   def obstacle(self):
       pass
@@ -39,11 +44,8 @@ class Car:
       if event == 'slowdown':
          self.slowdown()
 
-      if event == 'turn_right':
+      if event == 'turn':
          self.turn()
-
-      #if event == 'turn_left':
-         #self.wheel_angle = 45
 
       if event == 'stopengine':
          self.stopengine()
@@ -67,8 +69,10 @@ while True:
         print('Wheels angle is {}° and Speed is {}km/h'
         .format(car.wheel_angle, car.speed))
 
-    #if carinput == 'turn'
-    #    pass
+    if carinput == 'turn':
+        car.act('turn')
+        print('Wheels angle is {}° and Speed is {}km/h'
+        .format(car.wheel_angle, car.speed))
 
     if carinput == 'obstacle':
         car.act('obstacle')
